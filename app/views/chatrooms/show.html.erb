@@ -1,0 +1,20 @@
+
+<div style="margin: 20px 0">
+	<p><strong>Name:</strong>
+	  <%= @chatroom.name %></p>
+
+	<div class="scrollable col-md-7 col-sm-12" style=" max-height: 350px; overflow: auto; border: 5px solid orange; border-radius: 10px;" id="message_dialog">
+		<div data-behavior='messages' data-chatroom-id='<%= @chatroom.id %>' style="padding: 10px;" >
+			<% @chatroom.messages.limit(100).each do |message| %>
+				<div style="padding-bottom: 10px;">
+					<%= render message %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+	<div class="col-md-6 col-md-offset-2 col-sm-12" style="position: fixed;top: 500px; left: 0; ">
+		<%= form_for [@chatroom, Message.new], remote: true do |f| %>
+		<%= f.text_area :body, rows: 2, class: "form-control", autofocus: true, placeholder: "Your messages here..." %>
+		<% end %>
+	</div>
+</div>
