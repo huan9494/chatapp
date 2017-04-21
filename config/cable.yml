@@ -1,6 +1,6 @@
 development:
   adapter: redis
-  url: redis://localhost:6379/1
+  url: redis://redistogo:fb2bc610299acba317e9418bc5c430ce@barreleye.redistogo.com:11081/
 
 test:
   adapter: async
