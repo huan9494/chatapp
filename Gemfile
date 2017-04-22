@@ -58,3 +58,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'devise-bootstrap-views'
+gem 'carrierwave'
+gem "mini_magick"
+gem 'cloudinary'

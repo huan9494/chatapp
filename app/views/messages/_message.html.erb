@@ -1,1 +1,26 @@
-<div  style="padding-bottom: 10px;" ><span style="font-size: 16px; font-weight: bold;"><%= message.user.username %></span>: <%= message.body %></div>
+
+<li class="media">
+
+    <div class="media-body">
+
+        <div class="media">
+             <% if message.user.avatar.url.present? %>
+                <a class="pull-left" href="#">
+                    <img class="media-object img-circle " src= <%= message.user.avatar.url(:thumb) %> style="width: 64px; height: 64px;" />
+                </a>
+            <% else %>
+                <a class="pull-left" href="#">
+                    <img class="media-object img-circle " src= "http://res.cloudinary.com/dfg9corup/image/upload/c_scale,h_64,w_64/v1492883786/anonymous_tswtq8.png" style="width: 64px; height: 64px;" />
+                </a>
+            <% end %>
+            <div class="media-body" >
+            	<%= message.body %>
+                <br />
+               <small class="text-muted"><%= message.user.username %> |  <%= message.created_at.to_formatted_s(:short) %></small>
+                <hr />
+            </div>
+        </div>
+
+    </div>
+
+</li>
