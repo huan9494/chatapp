@@ -61,3 +61,6 @@ gem 'devise-bootstrap-views'
 gem 'carrierwave'
 gem "mini_magick"
 gem 'cloudinary'
+
+gem 'bullet'
+gem 'rack-mini-profiler'

@@ -9,10 +9,39 @@
 <ul class="media-list">
 
 	<div class="scrollable" style=" max-height: 350px; overflow: auto;" id="message_dialog">
+		<% @chatroom.messages.includes(:user).limit(100).each do |message| %>
+			<%= render message %>
+		<% end %>
 		<div data-behavior='messages' data-chatroom-id='<%= @chatroom.id %>' style="padding: 10px;" >
-			<% @chatroom.messages.limit(100).each do |message| %>
-					<%= render message %>
-			<% end %>
+			
+<li class="media">
+
+    <div class="media-body">
+
+        <div class="media">
+             <% if @chatroom.messages.last.user.avatar.url.present? %>
+                <a class="pull-left" href="#">
+                    <img class="media-object img-circle " src= <%= @chatroom.messages.last.user.avatar.url(:thumb) %> style="width: 64px; height: 64px;" />
+                </a>
+            <% else %>
+                <a class="pull-left" href="#">
+                    <img class="media-object img-circle " src= "http://res.cloudinary.com/dfg9corup/image/upload/c_scale,h_64,w_64/v1492883786/anonymous_tswtq8.png" style="width: 64px; height: 64px;" />
+                </a>
+            <% end %>
+            <div class="media-body" >
+            	<%= @chatroom.messages.last.body %>
+                <br />
+               <small class="text-muted" ><%= @chatroom.messages.last.user.username %> |  <%= @chatroom.messages.last.created_at.to_formatted_s(:short) %></small>
+                <hr />
+            </div>
+        </div>
+
+    </div>
+
+</li>
+
+
+
 		</div>
 	</div>
 
