@@ -18,7 +18,7 @@
 
     <div class="media-body">
 
-        <% if @chatroom.messages.any? %>
+        <% if @chatroom.messages.any? and params[:message] %>
             <div class="media">
              <% if @chatroom.messages.last.user.avatar.url.present? %>
                 <a class="pull-left" href="#">
