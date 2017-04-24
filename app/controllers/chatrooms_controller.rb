@@ -11,6 +11,9 @@ class ChatroomsController < ApplicationController
   # GET /chatrooms/1
   # GET /chatrooms/1.json
   def show
+    unless @chatroom.users.include?(current_user)
+      redirect_to root_path
+    end
   end
 
   # GET /chatrooms/new
@@ -29,7 +32,7 @@ class ChatroomsController < ApplicationController
 
     respond_to do |format|
       if @chatroom.save
-        format.html { redirect_to @chatroom, notice: 'Chatroom was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Chatroom was successfully created.' }
         format.json { render :show, status: :created, location: @chatroom }
       else
         format.html { render :new }
