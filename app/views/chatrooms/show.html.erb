@@ -18,7 +18,8 @@
 
     <div class="media-body">
 
-        <div class="media">
+        <% if @chatroom.messages.any? %>
+            <div class="media">
              <% if @chatroom.messages.last.user.avatar.url.present? %>
                 <a class="pull-left" href="#">
                     <img class="media-object img-circle " src= <%= @chatroom.messages.last.user.avatar.url(:thumb) %> style="width: 64px; height: 64px;" />
@@ -29,12 +30,13 @@
                 </a>
             <% end %>
             <div class="media-body" >
-            	<%= @chatroom.messages.last.body %>
+                <%= @chatroom.messages.last.body %>
                 <br />
                <small class="text-muted" ><%= @chatroom.messages.last.user.username %> |  <%= @chatroom.messages.last.created_at.to_formatted_s(:short) %></small>
                 <hr />
             </div>
         </div>
+        <% end %>
 
     </div>
 
