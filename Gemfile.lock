@@ -190,7 +190,10 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.2)
+<<<<<<< HEAD
     uniform_notifier (1.10.0)
+=======
+>>>>>>> 6285d24... add avatar
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.5.0)

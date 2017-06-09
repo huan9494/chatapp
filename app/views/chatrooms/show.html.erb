@@ -9,6 +9,7 @@
 <ul class="media-list">
 
 	<div class="scrollable" style=" max-height: 350px; overflow: auto;" id="message_dialog">
+<<<<<<< HEAD
 		<% @chatroom.messages.includes(:user).limit(50).each do |message| %>
 			<%= render message %>
 		<% end %>
@@ -44,6 +45,12 @@
 
 
 
+=======
+		<div data-behavior='messages' data-chatroom-id='<%= @chatroom.id %>' style="padding: 10px;" >
+			<% @chatroom.messages.limit(100).each do |message| %>
+					<%= render message %>
+			<% end %>
+>>>>>>> 6285d24... add avatar
 		</div>
 	</div>
 

@@ -60,8 +60,12 @@ gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'carrierwave'
 gem "mini_magick"
+<<<<<<< HEAD
 gem 'cloudinary'
 
 gem 'bullet'
 gem 'rack-mini-profiler'
 gem 'talking_stick'
+=======
+gem 'cloudinary'
+>>>>>>> 6285d24... add avatar
