@@ -64,3 +64,4 @@ gem 'cloudinary'
 
 gem 'bullet'
 gem 'rack-mini-profiler'
+gem 'talking_stick'
